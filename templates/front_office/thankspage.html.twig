@@ -1,0 +1,328 @@
+<title>{% block title %}Thanks Page{% endblock %}</title>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" href="just_logo.png">
+
+ {% block stylesheets %}
+                    <!-- Global stylesheets -->
+
+                           <!-- slider stylesheet -->
+                              <link rel="stylesheet" type="text/css"
+                                href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+                              <!-- bootstrap core css -->
+                              <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+                              <!-- fonts style -->
+                              <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+                              <!-- Custom styles for this template -->
+                              <link href="css/style.css" rel="stylesheet" />
+                              <!-- responsive style -->
+                              <link href="css/responsive.css" rel="stylesheet" />
+
+                  <!-- /global stylesheets -->
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                        {{ encore_entry_link_tags('app') }}
+{% endblock %}
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <header class="header_section">
+    {# style="background-color: #6d9cee" #}
+      <div class="container-fluid" >
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="/">
+            <img src="images_front\logo_images\Logo_mon_bricoleur_noir.png" style="width: 150px;height: 50px;" alt="" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <ul class="navbar-nav">
+               <li class="nav-item " style="margin-left:300px">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/FrontServices">Services </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/FrontCatégories"> Catégories </a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact us</a>
+              </li> -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/FrontAbout"> About us</a>
+              </li>
+            </ul>
+            <div class="user_option" >
+              <a href="" >
+                <img src="images\user.png" alt="">
+                <span>
+                  Login
+                </span>
+              </a>
+
+            </div>
+          </div>
+          <div>
+            <div class="custom_menu-btn">
+              <button>
+                <span class=" s-1">
+
+                </span>
+                <span class="s-2">
+
+                </span>
+                <span class="s-3">
+
+                </span>
+              </button>
+            </div>
+          </div>
+
+        </nav>
+      </div>
+</header>
+
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding"  style="background-color:#F4F5F7">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h2>
+                Merci Votre 
+                <h1 style="color: #2498d2">commande<h1>
+                 a été bien faite
+              </h2>
+            <p>
+              Vous serez recontactés dans les minutes qui suivent par notre chargé de travaux.
+            </p>
+            <a href="/" style="background-color: #2498d2">
+              Revenir a la page d'acceuil
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6" style="margin-top:-100px">
+          <div class="img-box">
+            <img src="Logo_mon_bricoleur_noir.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+ <!-- info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="info_logo">
+        <h2>
+          Mon Bricoleur
+        </h2>
+      </div>
+      <div class="row">
+
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              About Us
+            </h5>
+            <div>
+              <div class="img-box">
+                <img src="images\location-white.png" width="18px" alt="">
+              </div>
+              <p>
+                La Cité d'innovation MARRAKECH
+              </p>
+            </div>
+            <div>
+              <div class="img-box">
+                <img src="images\telephone-white.png" width="12px" alt="">
+              </div>
+              <p>
+                +21293399476
+              </p>
+            </div>
+            <div>
+              <div class="img-box">
+                <img src="images\envelope-white.png" width="18px" alt="">
+              </div>
+              <p>
+                monbricoleur@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info" style="margin-left:100px">
+            <h5>
+              Informations
+            </h5>
+            <p>
+                Nous somme les 
+                meilleurs dans notre domaine
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+            {# <div class="info_insta">
+              <h5>
+                Instagram
+              </h5>
+              <div class="insta_container">
+                <div>
+                  <a href="">
+                    <div class="insta-box b-1">
+                      <img src="images_front\images\i-1.jpg" alt="">
+                    </div>
+                  </a>
+                  <a href="">
+                    <div class="insta-box b-2">
+                      <img src="images_front\images\i-2.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+
+                <div>
+                  <a href="">
+                    <div class="insta-box b-3">
+                      <img src="images_front\images\i-3.jpg" alt="">
+                    </div>
+                  </a>
+                  <a href="">
+                    <div class="insta-box b-4">
+                      <img src="images_front\images\i-4.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div>
+                  <a href="">
+                    <div class="insta-box b-3">
+                      <img src="images_front\images\i-5.jpg" alt="">
+                    </div>
+                  </a>
+                  <a href="">
+                    <div class="insta-box b-4">
+                      <img src="images_front\images\i-6.jpg" alt="">
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div> #}
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+            <h5>
+              Social Media
+            </h5>
+            <form action="">
+              <input type="email" placeholder="Enter your email">
+              <button>
+                Subscribe
+              </button>
+            </form>
+            <div class="social_box">
+              <a href="">
+                <img src="images\fb.png" alt="">
+              </a>
+              <a href="">
+                <img src="images\twitter.png" alt="">
+              </a>
+              <a href="">
+                <img src="images\linkedin.png" alt="">
+              </a>
+              <a href="">
+                <img src="images\youtube.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section ">
+    <div class="container">
+      <p>
+        &copy; 2022 Designed By
+        <a href="/">Amine MAZZA</a>
+      </p>
+    </div>
+  </section>
+  <!-- end  footer section -->
+
+
+{% block javascripts %}
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            {{ encore_entry_script_tags('app') }} 
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js">
+  </script>
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      navText: [],
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        420: {
+          items: 2
+        },
+        1000: {
+          items: 5
+        }
+      }
+
+    });
+  </script>
+  <script>
+    var nav = $("#navbarSupportedContent");
+    var btn = $(".custom_menu-btn");
+    btn.click
+    btn.click(function (e) {
+
+      e.preventDefault();
+      nav.toggleClass("lg_nav-toggle");
+      document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style")
+    });
+  </script>
+  <script>
+    $('.carousel').on('slid.bs.carousel', function () {
+      $(".indicator-2 li").removeClass("active");
+      indicators = $(".carousel-indicators li.active").data("slide-to");
+      a = $(".indicator-2").find("[data-slide-to='" + indicators + "']").addClass("active");
+      console.log(indicators);
+
+    })
+  </script>
+ {% endblock %}
+</body>

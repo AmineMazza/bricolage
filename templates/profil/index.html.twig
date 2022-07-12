@@ -1,0 +1,163 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Profil{% endblock %}
+
+{% block body %}
+<div class="card">
+							<div class="card-body bg-blue text-center card-img-top" style="background-image: url(/background-blue.jpg); height:350px">
+								<div class="card-img-actions d-inline-block mb-3">
+								{% if user.image == null %}
+						 			{# Profil image Par défaut: #}
+										{# <img src="/profil-image.jpg" class="border-white rounded-circle" width="48" height="48" alt=""> #}
+										<img class="img-fluid rounded-circle" src="/Dont_Have_Image.png" style="width:170px; height:170px; margin-top:50px" alt="">
+
+									</a>
+
+								{% else %}
+									{# Profil image : #}
+									
+										<img class="img-fluid rounded-circle" src="{{asset('/uploads/'~app.user.image)}}" style="width:170px; height:170px; margin-top:50px" alt="">
+									</a>
+								{% endif %}
+
+									<div class="card-img-actions-overlay card-img rounded-circle" style="width:170px; height:170px;margin-top:50px">
+										<a href="#" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round">
+
+                                        <form  action="{{path('upload_image')}}" method="post" enctype="multipart/form-data" >
+									        <i class="icon-plus3">
+											<input type="file" class="form-control" name="image" id="image" >
+											</i><br>
+						 			        <button  style="margin-top:5px;" type="submit" name="" id="" class="btn btn-primary" btn-lg btn-block>Confirm</button>
+								        </form>
+										
+										</a>
+									</div>
+								</div>
+
+								<h4 class="font-weight-semibold mb-0">{{app.user.fullName}}</h4>
+								<span class="d-block opacity-75">Admin</span>
+							</div>
+
+							<div class="card-body border-top-0">
+								<h2>My Informations :</h2>
+								<div class="d-sm-flex flex-sm-wrap mb-3" style="margin-top:30px">
+									<div class="font-weight-semibold">First name:</div>
+									<div class="ml-sm-auto mt-2 mt-sm-0">{{user.Username}}</div>
+								</div>
+
+								<div class="d-sm-flex flex-sm-wrap mb-3">
+									<div class="font-weight-semibold">Last name:</div>
+									<div class="ml-sm-auto mt-2 mt-sm-0">{{user.Lastname}}</div>
+								</div>
+
+								<div class="d-sm-flex flex-sm-wrap mb-3">
+									<div class="font-weight-semibold">Phone number:</div>
+									<div class="ml-sm-auto mt-2 mt-sm-0">{{user.Phone}}</div>
+								</div>
+
+								<div class="d-sm-flex flex-sm-wrap">
+									<div class="font-weight-semibold">Personal Email:</div>
+									<div class="ml-sm-auto mt-2 mt-sm-0"><a href="#">{{app.user.Email}}</a></div>
+								</div>
+							</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{# <h2 style="margin-left:40%;color:blue">My Profil</h2> #}
+<!-- Cover area -->
+				{# <div class="profile-cover" style="margin-top:10px">
+					Coverture image 
+					
+					<div class="profile-cover-img" style="background-image: url(/background-blue.jpg)"></div>
+					<div class="media align-items-center text-center text-md-left flex-column flex-md-row m-0">
+						<div class="mr-md-3 mb-2 mb-md-0">
+
+						{% if user.image == null %}
+						 	Profil image Par défaut:
+							
+								<img src="/profil-image.jpg" class="border-white rounded-circle" width="48" height="48" alt="">
+							</a>
+
+						{% else %}
+							Profil image :
+							<a href="#" class="profile-thumb">
+								<img src="{{asset('/uploads/'~user.image)}}" class="border-white rounded-circle" width="48" height="48" alt="">
+							</a>
+						{% endif %}
+
+						</div>
+						<div style="margin-top:50px; color:white">
+				    		<h1 class="mb-0" >{{ app.user.userIdentifier }}</h1>
+				    		<span class="d-block">Admin</span>
+
+							<div  style="margin-top:10px; ">
+								<form  action="{{path('upload_image')}}" method="post" enctype="multipart/form-data">
+									<input type="file" class="form-control" name="image" id="image" >
+						 			<button  style="margin-top:5px;margin-left:-250px" type="submit" name="" id="" class="btn btn-primary" btn-lg btn-block>Valider</button>
+								</form>
+							</div>
+						</div>
+						
+						<div class="ml-md-3 mt-2 mt-md-0">
+							<ul class="list-inline list-inline-condensed mb-0">
+                            	<li class="list-inline-item"><a href="#" class="btn btn-light border-transparent"><i class="icon-file-stats mr-2"></i> Profil image</a></li>
+								<li style="margin-left:400px;margin-top:80px" class="list-inline-item"><a href="#" class="btn btn-light border-transparent"><i class="icon-file-picture mr-2"></i> Cover image</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> #}
+<!-- /cover area -->
+				<!-- Basic layout-->
+						{# <div class="card">
+							<div class="card-header header-elements-inline">
+								<h5 class="card-title">Your Informations</h5>
+								<div class="header-elements">
+									<div class="list-icons">
+				                		<a class="list-icons-item" data-action="collapse"></a>
+				                		<a class="list-icons-item" data-action="reload"></a>
+				                		<a class="list-icons-item" data-action="remove"></a>
+				                	</div>
+			                	</div>
+							</div>
+
+							<div class="card-body">
+								<form action="" method="post">
+									<div class="form-group">
+										<label>First Name</label>
+										<input type="text" class="form-control" placeholder="First Name">
+									</div>
+
+									<div class="form-group">
+										<label>Last Name</label>
+										<input type="text" class="form-control" placeholder="Last Name">
+									</div>
+
+									<div class="form-group">
+										<label>Phone</label>
+										<input type="tel" class="form-control" placeholder="Your Phone">
+									</div>
+
+									<div class="text-right">
+										<button type="submit" class="btn btn-primary">Submit <i class="icon-paperplane ml-2"></i></button>
+									</div>
+								</form>
+							</div>
+						</div> #}
+						<!-- /basic layout -->
+						
+{% endblock %}

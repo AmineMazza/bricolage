@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Command{% endblock %}
+
+{% block body %}
+    <h2 style="margin-left:29%;margin-top:20px">Crée Une Nouvelle Commande</h2>
+    <div style="margin-left:30%; margin-top:20px; width:400px">
+        {{ include('command_crud/_form.html.twig') }}
+          <a href="{{ path('app_command_crud_index') }}" class="btn btn-danger" style="width:150px; margin-top:10px; margin-left:120px">Retour à la liste</a>
+    </div>
+{% endblock %}

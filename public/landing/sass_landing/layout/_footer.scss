@@ -1,0 +1,37 @@
+/*
+ * Footer Styles
+ */
+.site-footer{
+	text-align: center;
+	padding: 30px 0;
+}
+.social-links{
+	
+	a{
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		padding-top: 10px;;
+		@include em(18);
+		display: inline-block;
+		margin: 0 5px;
+		text-align: center;
+		color: white;
+		line-height: normal;
+
+		&.facebook{
+			background-color: #204385;
+		}
+		&.twitter{
+			background-color: #2aa9e0;
+		}
+		&.google-plus{
+			background-color: #d3492c;
+		}
+		&.pinterest{
+			background-color: #ca2128;
+		}
+	}
+
+
+}

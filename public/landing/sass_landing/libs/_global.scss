@@ -1,0 +1,67 @@
+/*
+ * Global Styles
+ */
+
+$browser-context: 15; // Default
+
+body {
+	background-color: $bg-color;
+	color       : $body-color;
+	font-family : $primary-font;
+	font-size   : #{$browser-context}px;
+	font-weight : 300;
+	line-height : 1.5;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight : 300;
+	margin      : 1em 0;
+	line-height: normal;
+}
+
+hr{ 
+	border: none;
+	border-bottom: 1px solid #777;
+}
+
+ul, ol {
+	margin: 0;
+	padding-left: 0;
+}
+
+a { 
+	text-decoration: none;
+	color: $accent-color;
+}
+
+address { font-style: normal }
+
+p{ margin-top: 0 }
+
+form{
+
+	input,textarea,select{
+		outline: none;
+		padding: 10px;
+		border-radius: 5px;
+		border: none;
+
+		&::-webkit-input-placeholder{
+			color: #656c71;
+		}
+	}
+	select{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		color: #656c71
+	}
+	textarea{
+		resize: vertical;
+	}
+	input[type="submit"],button, input[type="reset"]{
+		@extend .button;
+	}
+
+}

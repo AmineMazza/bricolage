@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commandes{% endblock %}
+
+{% block body %}
+<div class="row">
+					<div class="col-md-6" style="margin:40px">
+						<!-- Command list -->
+						<div class="card" style="width:1000px">
+							<div class="card-header header-elements-inline">
+								<h5 class="card-title" style="color:blue">Tout Les Commandes</h5>
+								<div class="header-elements">
+									<div class="list-icons">
+                                        {# <a href="{{ path('app_command_crud_new') }}" class="btn btn-primary">Create new</a> #}
+                                        <a class="icon-plus-circle2" href="{{ path('app_command_crud_new') }}"  data-action="Create New"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="collapse"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="reload"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="remove"></a>
+				                	</div>
+			                	</div>
+							</div>
+				<table class="table datatable-basic">
+                    <thead>
+                         <tr>
+                            <th>IdCommande</th>
+							{# <th>idClient</th> #}
+                            <th>DateCammand</th>
+                            <th>DateLivraison</th>
+                            <th>Description</th>
+							<th>Statut de paiement</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+					<tbody>
+					 {% for command in commands %}
+                        <tr>
+                                <td>{{ command.id }}</td>
+								{# <td>{{command.idClient}}</td> #}
+                                <td>{{ command.DateCammand ? command.DateCammand|date('d-m-Y') : '' }}</td>
+                                <td>{{ command.DateLivraison ? command.DateLivraison|date('d-m-Y') : '' }}</td>
+                                <td>{{ command.Description }}</td>	
+								{% if  command.Statut == 'payée' %}
+   									<td><span class="badge badge-primary">{{command.Statut}}</span></td>
+								{% else %}
+									<td><span class="badge badge-danger">{{command.Statut}}</span></td>
+							{% endif %}
+
+								<td class="text-center">
+												<div class="list-icons" style="margin-left:-60px">
+													<div class="dropdown">
+														<a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-stairs"></i></a>
+														<div class="dropdown-menu dropdown-menu-right">
+															<a href="{{ path('app_command_crud_show', {'id': command.id}) }}" class="dropdown-item"><i class="icon-eye"></i>Afficher</a>
+															<a href="{{ path('app_command_crud_edit', {'id': command.id}) }}" class="dropdown-item"><i class="icon-pencil5"></i>Modifier</a>
+															<a href="{{ path('app_command_crud_delete', {'id': command.id}) }}" class="dropdown-item"><i class="icon-close2"></i>Supprimer</a>															
+														</div>
+													</div>
+												</div>
+								</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="5">no records found</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+						</div>
+						<!-- /Command list -->
+			</div>
+{% endblock %}

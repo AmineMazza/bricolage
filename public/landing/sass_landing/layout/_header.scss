@@ -1,0 +1,21 @@
+/*
+ * Header Styles
+ */
+
+.site-header{
+	@include clearfix;
+	margin-bottom: 30px;
+	overflow: hidden;
+	.logo{
+		float: left;
+		margin-right: 30px;
+	}
+	.header-type{
+		h1{
+			@include em(30);
+			font-weight: 300;
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+	}
+}

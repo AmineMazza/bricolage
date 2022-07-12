@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Categorie{% endblock %}
+
+{% block body %}
+
+    <div style="margin-left:30%; margin-top:20px; width:370px">
+        <h3>Modifier la Categorie </h3>
+        {{ include('categorie_crud/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+        {# {{ include('categorie_crud/_delete_form.html.twig') }} #}
+        <form method="post" action="{{ path('app_categorie_crud_delete', {'id': categorie.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ categorie.id) }}">
+            <button class="btn btn-danger" style="width:150px; margin-top:-65px; margin-left:200px">Supprimer</button>
+        </form>
+        <a href="{{ path('app_categorie_crud_index') }}" class="btn btn-primary" style="width:150px; margin-top:5px; margin-left:120px">Retour à la liste</a>
+    </div>
+{% endblock %}

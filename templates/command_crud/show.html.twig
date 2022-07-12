@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Command{% endblock %}
+
+{% block body %}
+    <h1 style="margin-top:10px; ">Détail de la Commande : </h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Numéro de Commande</th>
+                <td>{{ command.id }}</td>
+            </tr>
+            {# <tr>
+                <th>client</th>
+                <td>{{ command.idClient.fullName }}</td>
+            </tr> #}
+            <tr>
+                <th>Sous Service Choisir</th>
+                <td>{{ command.idSousService.Name }}</td>
+            </tr>
+            <tr>
+                <th>DateCammand</th>
+                <td>{{ command.DateCammand ? command.DateCammand|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateLivraison</th>
+                <td>{{ command.DateLivraison ? command.DateLivraison|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ command.Description }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ command.statut }}</td>
+            </tr>
+
+
+            <tr>
+                <th>Email</th>
+                <td>{{ command.Email }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ command.Tel }}</td>
+            </tr>
+            <tr>
+                <th>ville</th>
+                <td>{{ command.ville }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ command.Adresse }}</td>
+            </tr>
+							
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_command_crud_index') }}" class="btn btn-danger" style="width:150px; margin-top:10px; margin-left:20px">Retour à la liste</a>
+    <a href="{{ path('app_command_crud_edit', {'id': command.id}) }}" class="btn btn-primary" style="width:150px; margin-top:10px; margin-left:20px">Modifier</a>
+    <div style="margin-left:-100px">
+        {{ include('command_crud/_delete_form.html.twig') }}
+    <div>
+{% endblock %}

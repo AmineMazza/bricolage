@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Command{% endblock %}
+
+{% block body %}
+
+    <div style="margin-left:30%; margin-top:20px; width:370px">
+        <h2>Modifier La Command </h2>
+        {{ include('command_crud/_form.html.twig', {'button_label': 'Enregister'}) }}
+        {{ include('command_crud/_delete_form.html.twig') }}
+        <a href="{{ path('app_command_crud_index') }}" class="btn btn-primary" style="width:150px; margin-top:10px; margin-left:120px">Retour à la liste</a>
+
+    </div>
+{% endblock %}

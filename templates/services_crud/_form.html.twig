@@ -1,0 +1,29 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+                            {# <div class="card-body">
+								<form method="post">
+									<div class="form-group">
+										<label>Image</label>
+										<input type="file" class="form-control" placeholder="Image">
+									</div>
+
+									<div class="form-group">
+										<label>Name_Service</label>
+										<input type="text" class="form-control" placeholder="Name_Service">
+									</div>
+
+									<div class="form-group">
+										<label>discription</label>
+										<input type="text" class="form-control" placeholder="discription">
+									</div>
+
+									<div class="text-right">
+                                        <button class="btn-primary">{{ button_label|default('Save') }}</button>
+									</div>
+                                    <div>
+                                        <a href="{{ path('app_services_crud_index') }}">back to list</a>
+                                    </div>
+								</form>
+							</div> #}
+    <button class="btn btn-primary" style="margin-left:40px;width:150px">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

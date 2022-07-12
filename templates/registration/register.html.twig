@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+	<div class="regi"  style="margin-left:40%; width:280px; margin-top:100px">
+	<img src="just_logo.png" style="margin-left:97px;width:92px;height:76px">
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        {# <button type="submit" class="btn">Register</button> #}
+		<button type="submit" class="btn btn-primary btn-block" >Crée un Compte<i class="icon-circle-right2 ml-2"></i></button>
+
+    {{ form_end(registrationForm) }}
+	</div>
+    <!-- Registration form -->
+				{# <form action="index.html" class="flex-fill" style="margin-top:50px">
+					<div class="row">
+						<div class="col-lg-6 offset-lg-3">
+							<div class="card mb-0">
+								<div class="card-body">
+									<div class="text-center mb-3">
+										<img src="just_logo.png" width="100px" height="80px" style="margin-top:20px">
+                                        <h5 class="mb-0">Create account</h5>
+										<span class="d-block text-muted">All fields are required</span>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group form-group-feedback form-group-feedback-right">
+												<input type="text" class="form-control" placeholder="First name" required>
+												<div class="form-control-feedback">
+													<i class="icon-user-check text-muted"></i>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group form-group-feedback form-group-feedback-right">
+												<input type="text" class="form-control" placeholder="last name" required>
+												<div class="form-control-feedback">
+													<i class="icon-user-check text-muted"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group form-group-feedback form-group-feedback-right">
+												<input type="password" class="form-control" placeholder="Create password" required>
+												<div class="form-control-feedback">
+													<i class="icon-user-lock text-muted"></i>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group form-group-feedback form-group-feedback-right">
+												<input type="email" class="form-control" placeholder="Your email" required>
+												<div class="form-control-feedback">
+													<i class="icon-mention text-muted"></i>
+												</div>
+											</div>
+										</div>
+
+									</div>
+                                <div style="margin-left:200px">
+									<button href="{{ path('app_login') }}" type="submit" class="btn bg-primary btn-labeled btn-labeled-right">Create account</button>
+                                    <button type="submit" class="btn bg-danger btn-labeled btn-labeled-right">Annulez Creation </button>
+                                    <a href="/" class="btn bg-dark btn-labeled btn-labeled-right">Cancel Creation</a>
+                                </div>
+
+                                </div>
+							</div>
+						</div>
+					</div>
+				</form> #}
+				<!-- /registration form -->
+{% endblock %}

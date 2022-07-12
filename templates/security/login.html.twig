@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+{# If ur login and u want to login too #}
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+  	<!-- Login card -->
+	 
+					<div class="card mb-0" >
+					{# Dégradé color #}
+					{# style="background-image: linear-gradient(to right,white,rgb(102,262,270));" #}
+						<div class="card-body">
+							<div class="text-center mb-3">
+								{# <i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i> #}
+								<img src="/just_logo.png" width="90px" height="80px" style="margin-top:20px">
+								<h5 class="mb-0" style="margin-top:10px">Login to your account</h5>
+								<span class="d-block text-muted">Your Informations</span>
+							</div>
+
+							<div class="form-group form-group-feedback form-group-feedback-left" style="margin-left:40%">
+								    <label for="inputEmail">Email</label>
+                                    <input type="email"  name="email" style="width:280px" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+								<div class="form-control-feedback" style="margin-top:32px">
+									<i class="icon-user text-muted" ></i>
+								</div>
+							</div>
+
+							<div class="form-group form-group-feedback form-group-feedback-left" style="margin-left:40%">
+							        <label for="inputPassword">Password</label>
+                                    <input type="password" style="width:280px" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+								<div class="form-control-feedback" style="margin-top:32px">
+									<i class="icon-lock2 text-muted" ></i>
+								</div>
+							</div>
+
+							<div class="form-group d-flex align-items-center" style="margin-left:40%">
+								<div class="form-check mb-0">
+									<label class="form-check-label">
+										<input type="checkbox" name="remember" class="form-input-styled" checked data-fouc>
+										Remember
+									</label>
+								</div>
+
+								<a href="login_password_recover.html" class="ml-auto" style="margin-right:65%">Forgot password?</a>
+							</div>
+
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block" style="margin-left:40%; width:280px">Log in <i class="icon-circle-right2 ml-2"></i></button>
+							</div>
+
+							{# <div class="form-group text-center text-muted content-divider">
+								<span class="px-2">or sign in with</span>
+							</div>
+
+							<div class="form-group text-center">
+								<button type="button" class="btn btn-outline bg-indigo border-indigo text-indigo btn-icon rounded-round border-2"><i class="icon-facebook"></i></button>
+								<button type="button" class="btn btn-outline bg-pink-300 border-pink-300 text-pink-300 btn-icon rounded-round border-2 ml-2"><i class="icon-dribbble3"></i></button>
+								<button type="button" class="btn btn-outline bg-slate-600 border-slate-600 text-slate-600 btn-icon rounded-round border-2 ml-2"><i class="icon-github"></i></button>
+								<button type="button" class="btn btn-outline bg-info border-info text-info btn-icon rounded-round border-2 ml-2"><i class="icon-twitter"></i></button>
+							</div> #}
+{# 
+							<div class="form-group text-center text-muted content-divider">
+								<span class="px-2">Don't have an account?</span>
+							</div> #}
+
+							{# <div class="form-group">
+								<a href="{{ path('register') }}" class="btn btn-dark btn-dark" style="margin-left:40%; width:280px">Sign up</a>
+							</div> #}
+
+						</div>
+					</div>
+
+                    <input type="hidden" name="_csrf_token"
+                     value="{{ csrf_token('authenticate') }}">
+
+				<!-- /login card -->
+</form>
+
+	{# <div style="margin-left:40%; margin-top:80px">
+    <h1 class="h3 mb-3 font-weight-normal" style="margin-left:40px">Connexion</h1>
+
+    <label for="inputEmail">Email</label>
+    <input type="email"  name="email" style="width:250px" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    
+    <label for="inputPassword">Password</label>
+    <input type="password" style="width:250px" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+    <button class="btn btn-lg btn-primary" type="submit" style="margin-top:10px">Log in</button>
+    <button class="btn btn-lg btn-danger" type="delete" style="margin-top:10px">Annulez</button> #}
+{% endblock %}
+

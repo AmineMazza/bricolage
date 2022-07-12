@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+    <div class="content">
+     {# <div>
+        <input type="search" name="search" value="" placeholder="Search for categories" style="width:400px;height:40px;margin-top:20px">
+        <a  type="submit" class="btn bg-primary " style="width:150px;margin-top:-5px;">Search</a>
+    </div> #}
+                <div id="DataTables_Table_2_filter" class="dataTables_filter" style="width:400px;height:40px;margin-top:20px">
+			    	<label>
+				    	<span>Search:</span>
+					    <input type="search" class="" placeholder="Filter Catégories" aria-controls="DataTables_Table_2">
+				    </label>
+	            </div>
+				<!-- Basic datatable -->
+				<div class="card" style="margin-top:90px">
+					<div class="card-header header-elements-inline">
+						<h5 class="card-title" style="color:blue">Tout Les Categories</h5>
+						<div class="header-elements">
+							<div class="list-icons">
+								<a class="icon-plus-circle2" href="{{ path('app_categorie_crud_new') }}" ></a>
+		                		<a class="list-icons-item" style="color:blue" data-action="collapse"></a>
+		                		<a class="list-icons-item" style="color:blue" data-action="reload"></a>
+		                		<a class="list-icons-item" style="color:blue" data-action="remove"></a>
+		                	</div>
+	                	</div>
+					</div>
+
+	<table class="table datatable-basic">
+		<thead>
+            <tr>
+                {# <th>Id</th> #}
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Statut</th>
+                <th class="text-center">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie in categories %}
+            <tr>
+                {# <td>{{ categorie.id }}</td> #}
+                <td><img style="width: 50px; border-radius: 50%;" src="{{ asset('uploads/' ~ categorie.image) }}"></td>
+                {# <td>{{ categorie.image }}</td> #}
+                <td>{{ categorie.nom }}</td>
+                <td>{{ categorie.statut }}</td>
+                {# <td>
+                    <a href="{{ path('app_categorie_crud_show', {'id': categorie.id}) }}">show</a>
+                    <a href="{{ path('app_categorie_crud_edit', {'id': categorie.id}) }}">edit</a>
+                </td> #}
+                <td class="text-center">
+									<div class="list-icons" >
+										<div class="dropdown">
+											<a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-stairs"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+												<a href="{{ path('app_categorie_crud_show', {'id': categorie.id}) }}" class="dropdown-item"><i class="icon-eye"></i>Afficher</a>
+												<a href="{{ path('app_categorie_crud_edit', {'id': categorie.id}) }}" class="dropdown-item"><i class="icon-pencil5"></i>Modifier</a>
+												<a href="{{ path('app_categorie_crud_delete', {'id': categorie.id}) }}" class="dropdown-item"><i class="icon-close2"></i>Supprimer</a>
+											</div>
+										</div>
+									</div>
+								</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+	</table>
+</div>
+            {# <a href="{{ path('app_categorie_crud_new') }}" type="submit" class="btn bg-primary " style="width:150px;margin-left:710px">Add a category</a> #}
+            {# <a href="{{ path('app_categorie_crud_new') }}" class="button primary-button"><i class="yc yc-plus"></i>Add a category</a> #}
+{% endblock %}

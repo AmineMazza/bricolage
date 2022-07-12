@@ -1,0 +1,267 @@
+.main-content{
+	padding: 50px 0;
+	margin: 0 -15px;
+	@include clearfix;
+}
+
+.content{
+	@extend .col-md-8;
+
+	.banner{
+		img{
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			border-radius: 3px;
+		}
+	}
+}
+
+.feature{
+	padding-left: 90px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	position: relative;
+	border-top: 1px solid #efefef;
+
+	.feature-icon{
+		text-align: center;
+		position: absolute;
+		left:0;
+		@include em(48);
+		color: $accent-color;
+
+	}
+	&.rounded-icon {
+		padding-top: 0;
+		padding-bottom: 0;
+		margin-bottom: 30px;
+		border-top: none;
+		.feature-icon{
+			background: $accent-color;
+			color: white;
+			border-radius: 50%;
+			width: 70px;
+			height: 70px;
+			padding-top: 10px;
+			@include em(36);
+
+		}
+		h3{
+			color: $accent-color;
+			margin-bottom: 15px;
+			@include em(15);
+			font-weight: 700;
+		}
+
+	}
+		
+	.feature-title{
+		color: $accent-color;
+		font-weight: 300;
+		margin: 0 0 15px;
+		@include em(30);
+	}
+}
+
+.graduates{
+	background: #e2e2e2;
+	border-radius: 5px;
+	overflow: hidden;
+	padding: 30px;
+	position: relative;
+
+	.slides{
+		list-style: none;
+		@include clearfix;
+
+		.student-data{
+			@include clearfix;
+		}
+	}
+
+	.student-image{
+		@extend .col-md-4;
+		padding-left: 0;
+		text-align: center;
+
+		img{
+			max-width: 100%;
+
+		}
+	}
+	.student-details{
+		@extend .col-md-8;
+	}
+	.student-name{
+		@include em(30);
+		margin-top: 0;
+		margin-bottom: 10px;
+		padding: 30px 100px 20px 0;
+	}
+	.student-info{
+		list-style:none;
+		border-top: 1px solid #c4c4c4;
+		border-bottom: 1px solid #c4c4c4;
+		padding: 15px 0;
+		margin-bottom: 30px;
+
+		strong{color: $accent-color}
+	}
+
+	.flex-direction-nav{
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		z-index: 9;
+		list-style: none;
+
+		li{
+			display: inline-block;
+			margin-left: 5px;
+
+			a{
+				padding-top: 3px;
+				display: block;
+				color: $body-color;
+				outline: none;
+				width: 45px;
+				height: 45px;
+				border-radius: 50%;
+				border: 1px solid #c4c4c4;
+				text-align: center;
+				@include em(24);
+				transition: .3s ease;
+				background-color:#e2e2e2;
+
+				&:hover{
+					border-color: $accent-color;
+					color: $accent-color;
+				}
+			}
+		}
+	}
+}
+.aside{
+	@extend .col-md-4;
+}
+
+.signup-form{
+	background: $secondary-color;
+	border-radius: 5px;
+	overflow: hidden;
+
+	.form-header{
+		background: $accent-color;
+		padding: 40px 30px 10px;
+		color: white;
+		position: relative;
+		margin-bottom: 40px;
+		text-align: center;;
+
+		&:after{
+			content:" ";
+			position: absolute;
+			top: 100%;
+			left:0;
+			right:0;
+			height: 40px;
+			background: url(images/triangle.png) center bottom;
+		}
+
+		h2{
+			@include em(36);
+			font-weight: 300;
+			margin-top: 0;
+		}
+		p{
+			@include em(14);
+			color: #aad1f2;
+		}
+	}
+
+	.form-content{
+		padding: 40px;
+	}
+	
+	input,select{
+		width: 100%;
+	}
+	h4{
+		color: white;
+		@include em(18);
+		font-weight: 300;
+	}
+	.control{
+		display: block;
+		margin-bottom: 10px;
+
+		&.select{
+			overflow:hidden;
+			background: white;
+			border-radius: 3px;
+
+			select{
+				width: 110%;
+				appearance:none;
+				border-radius: none;
+				background: none;
+			}
+		}
+		
+		&.radio{
+			input{
+				display: none;
+
+				&:checked~label:after{
+					opacity: 1;
+					transform:scale(1);
+				}
+				&:checked~label{color:white}
+			}
+			label{
+				cursor: pointer;
+				position: relative;
+				padding-left: 30px;
+				transition: .3s ease;
+				&:before{
+					content:" ";
+					display: inline-block;
+					width: 20px;
+					height: 20px;
+					background: white;
+					border-radius: 50px;
+					vertical-align: middle;
+					margin-right: 10px;
+					position: absolute;
+					left:0;
+					top:0;
+				}
+				&:after{
+					content:" ";
+					position: absolute;
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					background: $accent-color;
+					opacity: 0;
+					transition: .3s ease;
+					left: 5px;
+					top: 5px;
+					transform:scale(1.5);
+				}
+			}
+		}
+	}
+
+	.columned {
+		input{
+			width: 65%;
+
+			&.small{
+				width: 30%;
+				margin-left:3%;
+			}
+		}
+	}
+}

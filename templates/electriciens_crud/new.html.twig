@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Electricien{% endblock %}
+
+{% block body %}
+
+    <h2 style="margin-left:30%;margin-top:20px">Add new Electricien</h2>
+    <div style="margin-left:30%; margin-top:20px; width:300px">
+    {{ include('electriciens_crud/_form.html.twig') }}
+    
+    <a href="{{ path('app_electriciens_crud_index') }}" class="btn btn-danger" style="width:150px; margin-top:10px; margin-left:80px">back to list</a>
+
+    </div>
+{% endblock %}

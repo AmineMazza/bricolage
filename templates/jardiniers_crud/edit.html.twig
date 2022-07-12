@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit BricoleursJardiniers{% endblock %}
+
+{% block body %}
+    <div style="margin-left:30%; margin-top:20px; width:370px">
+        <h2>Edit Le Jardinier " {{ bricoleurs_jardinier.Name }} "</h2>
+        {{ include('jardiniers_crud/_form.html.twig', {'button_label': 'Update'}) }}
+        <a href="{{ path('app_jardiniers_crud_index') }}" class="btn btn-danger" style="width:150px; margin-top:10px; margin-left:80px">back to list</a>
+        {{ include('jardiniers_crud/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

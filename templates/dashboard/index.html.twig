@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block body %}
+
+
+{# <center>
+ <h1 style="margin-top:40px; color:#324148">Welcome to Dashboard</h1>
+    <a href="{{ path('app_services_crud_index') }}" type="submit" class="btn bg-primary " style="width:200px;height:150px;padding-top:60px;margin-top:150px;">Gérer les Services</i></a>
+    <a href="{{ path('app_categorie_crud_index') }}" type="submit" class="btn bg-primary " style="width:200px;height:150px;padding-top:60px;margin-top:150px;">Gérer les categories</i></a>
+    <a href="{{ path('app_bricoleurs_crud_index') }}" type="submit" class="btn bg-primary " style="width:200px;height:150px;padding-top:60px;margin-top:150px;">Gérer les Bricoleurs</i></a>
+    <a href="{{ path('app_commande') }}" type="submit" class="btn bg-primary " style="width:200px;height:150px;padding-top:60px;margin-top:150px;">Gérer les Cammandes</i></a>
+</center> #}
+{# <div class="card card-body" style="margin-top:40px"> #}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+	<div class="row text-center" style="margin-top:150px">
+
+                                <div class="col-4">
+									<p><i class="icon-users4 icon-3x d-inline-block text-info"></i></p>
+									<a  href="{{ path('app_bricoleurs_crud_index') }}" type="submit" class="btn">
+                                    <h5>Gérer les Bricoleurs</h5>
+                                    </a>
+								</div>
+								<div class="col-4">
+									<p><i class="icon-hammer-wrench icon-3x d-inline-block text-warning"></i></p>
+									<a  href="{{ path('app_services_crud_index') }}" type="submit" class="btn">
+                                    <h5>Gérer les Services</h5>
+                                    </a>
+								</div>
+                                <div class="col-4" >
+                                	<p><i class="icon-bookmark4 icon-3x text-danger-400"></i></p>
+                                    <a href="{{ path('app_command_crud_index') }}" type="submit" class="btn">
+                                    <h5>Gérer les Cammandes</h5>
+                                    </a>
+								</div>
+                                 {# <div class="col-4" style="margin-top:50px">
+                                	<p><i class="icon-bag icon-3x text-danger-400"></i></p>
+                                    <a href="{{ path('app_categorie_crud_index') }}" type="submit" class="btn">
+                                    <h5>Gérer les Categories</h5>
+                                    </a>
+								</div> #}
+                                {# <div class="col-4" style="margin-top:50px">
+                                	<p><i class="icon-bag icon-3x text-danger-400"></i></p>
+                                    <a href="{{ path('app_sous_service_crud_index') }}" type="submit" class="btn">
+                                    <h5>Gérer les SousServices</h5>
+                                    </a>
+								</div> #}
+	</div>
+{# </div> #}
+
+{% endif %}
+
+{% endblock %}

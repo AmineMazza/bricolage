@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SousServices{% endblock %}
+
+{% block body %}
+    {# <div style="margin-left:30%; margin-top:20px; width:370px">
+        <h3>Modifier Le SousServices</h3>
+        {{ include('sous_services_crud/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+        {{ include('sous_services_crud/_delete_form.html.twig') }}
+        <a href="{{ path('app_sous_services_crud_index') }}" class="btn btn-primary" style="width:150px; margin-top:10px; margin-left:120px">Retour à la liste</a>
+    </div> #}
+
+    <div style="margin-left:30%; margin-top:20px; width:370px">
+        <h3>Modifier le Sous Service</h3>
+        {{ include('sous_services_crud/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+        <form method="post" action="{{ path('app_sous_services_crud_delete', {'id': sous_service.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sous_service.id) }}">
+            <button class="btn btn-danger" style="width:150px; margin-top:-65px; margin-left:200px">Supprimer</button>
+        </form>
+        <a href="{{ path('app_sous_services_crud_index') }}" class="btn btn-primary" style="width:150px; margin-top:5px; margin-left:120px">Retour à la liste</a>
+    </div>
+{% endblock %}

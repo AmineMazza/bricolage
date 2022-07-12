@@ -1,0 +1,424 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bricoleurs{% endblock %}
+
+{% block body %}
+
+	<!-- Page content -->
+	<div class="page-content">
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+
+			<!-- Content area -->
+			<div class="content">
+                    <h1  style="color:blue">Tout Les Bricoleurs</h1>
+
+				<!-- Bricoleurs lists -->
+				<div class="row">
+
+					<div class="col-md-6">
+
+						<!-- Minuisiers list -->
+							<div class="card" style="width:1000px">
+							<div class="card-header header-elements-inline">
+								<h5 class="card-title" style="color:blue">Les Menuisiers</h5>
+								<div class="header-elements">
+									<div class="list-icons">
+                                        <a href="{{ path('app_minuisiers_crud_new') }}" class="icon-plus-circle2"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="collapse"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="reload"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="remove"></a>
+				                	</div>
+			                	</div>
+							</div>
+						<table class="table datatable-basic">
+							<thead>
+								<tr>
+									{# <th>Id</th> #}
+									<th>Name</th>
+									<th>Last_Name</th>
+									<th>Tel</th>
+									<th>Job</th>
+									{# <th>actions</th> #}
+								</tr>
+							</thead>
+							<tbody>
+								{% for bricoleurs_minuisier in bricoleurs_minuisiers %}
+								<tr>
+									{# <td>{{ bricoleurs_minuisier.id }}</td> #}
+									<td>{{ bricoleurs_minuisier.Name }}</td>
+									<td>{{ bricoleurs_minuisier.LastName }}</td>
+									<td>{{ bricoleurs_minuisier.Phone }}</td>
+									<td>{{ bricoleurs_minuisier.Job }}</td>
+									{# <td class="text-center">
+														<div class="list-icons" style="margin-left:-60px">
+															<div class="dropdown">
+																<a href="#" class="list-icons-item" style="color:blue" data-toggle="dropdown"><i class="icon-menu9"></i></a>
+																<div class="dropdown-menu dropdown-menu-right">
+																	<a href="{{ path('app_minuisiers_crud_new') }}" class="dropdown-item"><i class="icon-file"></i>Add</a>
+																	<a href="{{ path('app_minuisiers_crud_edit', {'id': minuisiers.id}) }}" class="dropdown-item"><i class="icon-file"></i>Edit</a>
+																	<a href="{{ path('app_minuisiers_crud_show', {'id': minuisiers.id}) }}"   class="dropdown-item"><i class="icon-file"></i>Show</a>
+																</div>
+															</div>
+														</div>
+									</td> #}
+								</tr>
+								{% else %}
+									<tr>
+										<td colspan="5">no records found</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+							</div>
+						<!-- /Minuisiers list -->
+					</div>
+
+					<div class="col-md-6" style="margin:2px">
+						<!-- Platries list -->
+						<div class="card" style="width:1000px"> 
+							<div class="card-header header-elements-inline">
+								<h5 class="card-title"  style="color:blue">Les Platriers</h5>
+								<div class="header-elements">
+									<div class="list-icons">
+                                        <a href="{{ path('app_platriers_crud_new') }}" class="icon-plus-circle2"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="collapse"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="reload"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="remove"></a>
+				                	</div>
+			                	</div>
+							</div>
+							<table class="table datatable-basic">
+									<thead>
+										<tr>
+											{# <th>Id</th> #}
+											<th>Name</th>
+											<th>Last_Name</th>
+											<th>Tel</th>
+											<th>Job</th>
+											{# <th>actions</th> #}
+										</tr>
+									</thead>
+									<tbody>
+									{% for bricoleurs_platrier in bricoleurs_platriers %}
+										<tr>
+											{# <td>{{ bricoleurs_platrier.id }}</td> #}
+											<td>{{ bricoleurs_platrier.Name }}</td>
+											<td>{{ bricoleurs_platrier.LastName }}</td>
+											<td>{{ bricoleurs_platrier.Phone }}</td>
+											<td>{{ bricoleurs_platrier.Job }}</td>
+											{# <td class="text-center">
+																<div class="list-icons" style="margin-left:-60px">
+																	<div class="dropdown">
+																		<a href="#" class="list-icons-item" style="color:blue" data-toggle="dropdown"><i class="icon-menu9"></i></a>
+																		<div class="dropdown-menu dropdown-menu-right">
+																			<a href="{{ path('app_platriers_crud_new') }}" class="dropdown-item"><i class="icon-file"></i>Add</a>
+																			<a href="{{ path('app_bricoleurs_crud_edit', {'id': bricoleur.id}) }}" class="dropdown-item"><i class="icon-file"></i>Edit</a>
+																			<a href="{{ path('app_bricoleurs_crud_show', {'id': bricoleur.id}) }}"   class="dropdown-item"><i class="icon-file"></i>Show</a>
+																		</div>
+																	</div>
+																</div>
+											</td> #}
+										</tr>
+									{% else %}
+										<tr>
+											<td colspan="5">no records found</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table> 
+							{# <ul class="media-list media-list-linked">
+								<li>
+									<div class="media">
+										<div class="mr-3"><img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt=""></div>
+										<div class="media-body">
+											<div class="media-title font-weight-semibold">Jeremy Victorino</div>
+											<span class="text-muted">Spotify</span>
+										</div>
+										<div class="align-self-center ml-3">
+											<a href="#" class="text-default" style="color:blue" data-toggle="collapse" style="color:blue" data-target="#jeremy2">
+												<i class="icon-menu7"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="collapse" id="jeremy2">
+										<div class="card-body bg-light border-top border-bottom">
+											<ul class="list list-unstyled mb-0">
+												<li><i class="icon-pin mr-2"></i> Hague</li>
+												<li><i class="icon-user-tie mr-2"></i> Network engineer</li>
+												<li><i class="icon-phone mr-2"></i> +1(389)384 9039</li>
+												<li><i class="icon-mail5 mr-2"></i> <a href="#">jeremy@victorino.com</a></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="media">
+										<div class="mr-3"><img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt=""></div>
+										<div class="media-body">
+											<div class="media-title font-weight-semibold">Monica Smith</div>
+											<span class="text-muted">Amazon</span>
+										</div>
+										<div class="align-self-center ml-3">
+											<a href="#" class="text-default" style="color:blue" data-toggle="collapse" style="color:blue" data-target="#monica2">
+												<i class="icon-menu7"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="collapse" id="monica2">
+										<div class="card-body bg-light border-top border-bottom">
+											<ul class="list list-unstyled mb-0">
+												<li><i class="icon-pin mr-2"></i> Paris</li>
+												<li><i class="icon-user-tie mr-2"></i> Web master</li>
+												<li><i class="icon-phone mr-2"></i> +5(342)543 2367</li>
+												<li><i class="icon-mail5 mr-2"></i> <a href="#">monica@smith.com</a></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+
+							</ul> #}
+						</div>
+						<!-- /Platries list -->
+					</div>
+
+					<div class="col-md-6" style="margin:2px">
+						<!-- Jardiniers list -->
+						<div class="card" style="width:1000px"> 
+							<div class="card-header header-elements-inline">
+								<h5 class="card-title"  style="color:blue">Les Jardiniers</h5>
+								<div class="header-elements">
+									<div class="list-icons">
+                                        <a href="{{ path('app_jardiniers_crud_new') }}" class="icon-plus-circle2"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="collapse"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="reload"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="remove"></a>
+				                	</div>
+			                	</div>
+							</div>
+							<table class="table datatable-basic">
+									<thead>
+										<tr>
+											{# <th>Id</th> #}
+											<th>Name</th>
+											<th>Last_Name</th>
+											<th>Tel</th>
+											<th>Job</th>
+											{# <th>actions</th> #}
+										</tr>
+									</thead>
+									<tbody>
+									{% for bricoleurs_jardinier in bricoleurs_jardiniers %}
+										<tr>
+											{# <td>{{ bricoleurs_jardinier.id }}</td> #}
+											<td>{{ bricoleurs_jardinier.Name }}</td>
+											<td>{{ bricoleurs_jardinier.LastName }}</td>
+											<td>{{ bricoleurs_jardinier.Phone }}</td>
+											<td>{{ bricoleurs_jardinier.Job }}</td>
+											{# <td class="text-center">
+																<div class="list-icons" style="margin-left:-60px">
+																	<div class="dropdown">
+																		<a href="#" class="list-icons-item" style="color:blue" data-toggle="dropdown"><i class="icon-menu9"></i></a>
+																		<div class="dropdown-menu dropdown-menu-right">
+																			<a href="{{ path('app_jardiniers_crud_new') }}" class="dropdown-item"><i class="icon-file"></i>Add</a>
+																			<a href="{{ path('app_bricoleurs_crud_edit', {'id': bricoleur.id}) }}" class="dropdown-item"><i class="icon-file"></i>Edit</a>
+																			<a href="{{ path('app_bricoleurs_crud_show', {'id': bricoleur.id}) }}"   class="dropdown-item"><i class="icon-file"></i>Show</a>
+																		</div>
+																	</div>
+																</div>
+											</td> #}
+										</tr>
+									{% else %}
+										<tr>
+											<td colspan="5">no records found</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table> 
+						</div>
+						<!-- /Jardiniers list -->
+					</div>
+
+					<div class="col-md-6" style="margin:2px">
+						<!-- Les Plombiers list -->
+						<div class="card" style="width:1000px"> 
+							<div class="card-header header-elements-inline">
+								<h5 class="card-title"  style="color:blue">Les  Plombiers</h5>
+								<div class="header-elements">
+									<div class="list-icons">
+                                        <a href="{{ path('app_plombiers_crud_new') }}" class="icon-plus-circle2"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="collapse"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="reload"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="remove"></a>
+				                	</div>
+			                	</div>
+							</div>
+							<table class="table datatable-basic">
+									<thead>
+										<tr>
+											{# <th>Id</th> #}
+											<th>Name</th>
+											<th>Last_Name</th>
+											<th>Tel</th>
+											<th>Job</th>
+											{# <th>actions</th> #}
+										</tr>
+									</thead>
+									<tbody>
+									{% for bricoleurs_plombier in bricoleurs_plombiers %}
+										<tr>
+											{# <td>{{ bricoleurs_plombier.id }}</td> #}
+											<td>{{ bricoleurs_plombier.Name }}</td>
+											<td>{{ bricoleurs_plombier.LastName }}</td>
+											<td>{{ bricoleurs_plombier.Phone }}</td>
+											<td>{{ bricoleurs_plombier.Job }}</td>
+											{# <td class="text-center">
+																<div class="list-icons" style="margin-left:-60px">
+																	<div class="dropdown">
+																		<a href="#" class="list-icons-item" style="color:blue" data-toggle="dropdown"><i class="icon-menu9"></i></a>
+																		<div class="dropdown-menu dropdown-menu-right">
+																			<a href="{{ path('app_plombiers_crud_new') }}" class="dropdown-item"><i class="icon-file"></i>Add</a>
+																			<a href="{{ path('app_bricoleurs_crud_edit', {'id': bricoleur.id}) }}" class="dropdown-item"><i class="icon-file"></i>Edit</a>
+																			<a href="{{ path('app_bricoleurs_crud_show', {'id': bricoleur.id}) }}"   class="dropdown-item"><i class="icon-file"></i>Show</a>
+																		</div>
+																	</div>
+																</div>
+											</td> #}
+										</tr>
+									{% else %}
+										<tr>
+											<td colspan="5">no records found</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table> 
+						</div>
+						<!-- /Les Plombiers list -->
+					</div>
+
+					<div class="col-md-6" style="margin:2px">
+						<!-- Les Les Electriciens list -->
+						<div class="card" style="width:1000px"> 
+							<div class="card-header header-elements-inline">
+								<h5 class="card-title"  style="color:blue">Les Electriciens</h5>
+								<div class="header-elements">
+									<div class="list-icons">
+                                        <a href="{{ path('app_electriciens_crud_new') }}" class="icon-plus-circle2"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="collapse"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="reload"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="remove"></a>
+				                	</div>
+			                	</div>
+							</div>
+							<table class="table datatable-basic">
+									<thead>
+										<tr>
+											{# <th>Id</th> #}
+											<th>Name</th>
+											<th>Last_Name</th>
+											<th>Tel</th>
+											<th>Job</th>
+											{# <th>actions</th> #}
+										</tr>
+									</thead>
+									<tbody>
+									{% for bricoleurs_electricien in bricoleurs_electriciens %}
+										<tr>
+											{# <td>{{ bricoleurs_electricien.id }}</td> #}
+											<td>{{ bricoleurs_electricien.Name }}</td>
+											<td>{{ bricoleurs_electricien.LastName }}</td>
+											<td>{{ bricoleurs_electricien.Phone }}</td>
+											<td>{{ bricoleurs_electricien.Job }}</td>
+											{# <td class="text-center">
+																<div class="list-icons" style="margin-left:-60px">
+																	<div class="dropdown">
+																		<a href="#" class="list-icons-item" style="color:blue" data-toggle="dropdown"><i class="icon-menu9"></i></a>
+																		<div class="dropdown-menu dropdown-menu-right">
+																			<a href="{{ path('app_electriciens_crud_new') }}" class="dropdown-item"><i class="icon-file"></i>Add</a>
+																			<a href="{{ path('app_bricoleurs_crud_edit', {'id': bricoleur.id}) }}" class="dropdown-item"><i class="icon-file"></i>Edit</a>
+																			<a href="{{ path('app_bricoleurs_crud_show', {'id': bricoleur.id}) }}"   class="dropdown-item"><i class="icon-file"></i>Show</a>
+																		</div>
+																	</div>
+																</div>
+											</td> #}
+										</tr>
+									{% else %}
+										<tr>
+											<td colspan="5">no records found</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table> 
+						</div>
+						<!-- /Les Electriciens list -->
+					</div>
+
+					<div class="col-md-6" style="margin:2px">
+						<!-- Les Demenageurs list -->
+						<div class="card" style="width:1000px"> 
+							<div class="card-header header-elements-inline">
+								<h5 class="card-title"  style="color:blue">Les Demenageurs</h5>
+								<div class="header-elements">
+									<div class="list-icons">
+                                        <a href="{{ path('app_demenageurs_crud_new') }}" class="icon-plus-circle2"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="collapse"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="reload"></a>
+				                		<a class="list-icons-item" style="color:blue" data-action="remove"></a>
+				                	</div>
+			                	</div>
+							</div>
+							<table class="table datatable-basic">
+									<thead>
+										<tr>
+											{# <th>Id</th> #}
+											<th>Name</th>
+											<th>Last_Name</th>
+											<th>Tel</th>
+											<th>Job</th>
+											{# <th>actions</th> #}
+										</tr>
+									</thead>
+									<tbody>
+									{% for bricoleurs_demenageur in bricoleurs_demenageurs %}
+										<tr>
+											{# <td>{{ bricoleurs_demenageur.id }}</td> #}
+											<td>{{ bricoleurs_demenageur.Name }}</td>
+											<td>{{ bricoleurs_demenageur.LastName }}</td>
+											<td>{{ bricoleurs_demenageur.phone }}</td>
+											<td>{{ bricoleurs_demenageur.Job }}</td>
+											{# <td class="text-center">
+																<div class="list-icons" style="margin-left:-60px">
+																	<div class="dropdown">
+																		<a href="#" class="list-icons-item" style="color:blue" data-toggle="dropdown"><i class="icon-menu9"></i></a>
+																		<div class="dropdown-menu dropdown-menu-right">
+																			<a href="{{ path('app_demenageurs_crud_new') }}" class="dropdown-item"><i class="icon-file"></i>Add</a>
+																			<a href="{{ path('app_bricoleurs_crud_edit', {'id': bricoleur.id}) }}" class="dropdown-item"><i class="icon-file"></i>Edit</a>
+																			<a href="{{ path('app_bricoleurs_crud_show', {'id': bricoleur.id}) }}"   class="dropdown-item"><i class="icon-file"></i>Show</a>
+																		</div>
+																	</div>
+																</div>
+											</td> #}
+										</tr>
+									{% else %}
+										<tr>
+											<td colspan="5">no records found</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table> 
+						</div>
+						<!-- /Les Demenageurs list -->
+					</div>
+				</div>
+				<!-- /Bricoleurs lists -->
+			</div>
+			<!-- /content area -->
+		</div>
+		<!-- /main content -->
+	</div>
+	<!-- /page content -->
+{% endblock %}

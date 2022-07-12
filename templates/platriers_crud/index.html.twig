@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Platriers{% endblock %}
+
+{% block body %}
+
+<div class="row">
+					<div class="col-md-6" style="margin:40px">
+						<!-- Minuisiers list -->
+						<div class="card" style="width:1000px">
+							<div class="card-header header-elements-inline">
+								<h5 class="card-title" style="color:blue">Les Platriers</h5>
+								<div class="header-elements">
+									<div class="list-icons">
+				                		<a class="icon-plus-circle2" href="{{ path('app_platriers_crud_new') }}" ></a>
+		                		        <a class="list-icons-item" style="color:blue" data-action="collapse"></a>
+		                		        <a class="list-icons-item" style="color:blue" data-action="reload"></a>
+		                		        <a class="list-icons-item" style="color:blue" data-action="remove"></a>
+		                	        </div>
+			                	</div>
+							</div>
+				<table class="table datatable-basic">
+					<thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Last_name</th>
+                            <th>Phone</th>
+                            <th>Job</th>
+                            <th class="text-center">actions</th>
+                        </tr>
+                    </thead>
+					<tbody>
+					 {% for bricoleurs_platrier in bricoleurs_platriers %}
+                        <tr>
+                            {# <td>{{ bricoleurs_platrier.id }}</td> #}
+                            <td>{{ bricoleurs_platrier.Name }}</td>
+                            <td>{{ bricoleurs_platrier.LastName }}</td>
+                            <td>{{ bricoleurs_platrier.Phone }}</td>
+                            <td>{{ bricoleurs_platrier.Job }}</td>
+                            <td class="text-center">
+												<div class="list-icons">
+													<div class="dropdown">
+                                                            <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-stairs"></i></a>
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a href="{{ path('app_platriers_crud_show', {'id': bricoleurs_platrier.id}) }}" class="dropdown-item"><i class="icon-eye"></i>Afficher</a>
+                                                                <a href="{{ path('app_platriers_crud_edit', {'id': bricoleurs_platrier.id}) }}" class="dropdown-item"><i class="icon-pencil5"></i>Modifier</a>
+                                                                <a href="{{ path('app_platriers_crud_show', {'id': bricoleurs_platrier.id}) }}" class="dropdown-item"><i class="icon-close2"></i>Supprimer</a>
+                                                            </div>
+													</div>
+												</div>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="5">no records found</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+						</div>
+						<!-- /Minuisiers list -->
+			</div>
+
+    {# <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Last_name</th>
+                <th>Phone</th>
+                <th>Job</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bricoleurs_platrier in bricoleurs_platriers %}
+            <tr>
+                <td>{{ bricoleurs_platrier.id }}</td>
+                <td>{{ bricoleurs_platrier.Name }}</td>
+                <td>{{ bricoleurs_platrier.LastName }}</td>
+                <td>{{ bricoleurs_platrier.Phone }}</td>
+                <td>{{ bricoleurs_platrier.Job }}</td>
+                <td>
+                    <a href="{{ path('app_platriers_crud_show', {'id': bricoleurs_platrier.id}) }}">show</a>
+                    <a href="{{ path('app_platriers_crud_edit', {'id': bricoleurs_platrier.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> #}
+    {# <a href="{{ path('app_platriers_crud_new') }}">Create new</a> #}
+{% endblock %}

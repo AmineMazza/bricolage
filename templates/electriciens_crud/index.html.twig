@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Electriciens{% endblock %}
+
+{% block body %}
+<div class="row">
+					<div class="col-md-6" style="margin:40px">
+						<!-- electriciens list -->
+						<div class="card" style="width:1000px">
+							<div class="card-header header-elements-inline">
+								<h5 class="card-title" style="color:blue">Les Electriciens</h5>
+								<div class="header-elements">
+                                    <div class="list-icons">
+				                		<a class="icon-plus-circle2" href="{{ path('app_electriciens_crud_new') }}" ></a>
+		                		        <a class="list-icons-item" style="color:blue" data-action="collapse"></a>
+		                		        <a class="list-icons-item" style="color:blue" data-action="reload"></a>
+		                		        <a class="list-icons-item" style="color:blue" data-action="remove"></a>
+		                	        </div>
+			                	</div>
+							</div>
+				<table class="table datatable-basic">
+                    <thead>
+                        <tr>
+                            {# <th>Id</th> #}
+                            <th>Name</th>
+                            <th>Last_name</th>
+                            <th>Phone</th>
+                            <th>Job</th>
+                            <th class="text-center">actions</th>
+                        </tr>
+                    </thead>
+					<tbody>
+				    {% for bricoleurs_electricien in bricoleurs_electriciens %}
+                        <tr>
+                            {# <td>{{ bricoleurs_electricien.id }}</td> #}
+                            <td>{{ bricoleurs_electricien.Name }}</td>
+                            <td>{{ bricoleurs_electricien.LastName }}</td>
+                            <td>{{ bricoleurs_electricien.Phone }}</td>
+                            <td>{{ bricoleurs_electricien.Job }}</td>
+							<td class="text-center">
+                                                <div class="list-icons">
+													<div class="dropdown">
+                                                            <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-stairs"></i></a>
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a href="{{ path('app_electriciens_crud_show', {'id': bricoleurs_electricien.id}) }}" class="dropdown-item"><i class="icon-eye"></i>Afficher</a>
+                                                                <a href="{{ path('app_electriciens_crud_edit', {'id': bricoleurs_electricien.id}) }}" class="dropdown-item"><i class="icon-pencil5"></i>Modifier</a>
+                                                                <a href="{{ path('app_electriciens_crud_show', {'id': bricoleurs_electricien.id}) }}" class="dropdown-item"><i class="icon-close2"></i>Supprimer</a>
+                                                            </div>
+													</div>
+												</div>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="5">no Plombiers found</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+						</div>
+						<!-- /Plombiers list -->
+</div>
+
+
+    {# <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Last_name</th>
+                <th>Phone</th>
+                <th>Job</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bricoleurs_electricien in bricoleurs_electriciens %}
+            <tr>
+                <td>{{ bricoleurs_electricien.id }}</td>
+                <td>{{ bricoleurs_electricien.Name }}</td>
+                <td>{{ bricoleurs_electricien.LastName }}</td>
+                <td>{{ bricoleurs_electricien.Phone }}</td>
+                <td>{{ bricoleurs_electricien.Job }}</td>
+                <td>
+                    <a href="{{ path('app_electriciens_crud_show', {'id': bricoleurs_electricien.id}) }}">show</a>
+                    <a href="{{ path('app_electriciens_crud_edit', {'id': bricoleurs_electricien.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('app_electriciens_crud_new') }}">Create new</a> #}
+{% endblock %}

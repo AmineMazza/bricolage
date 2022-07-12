@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SousServices{% endblock %}
+
+{% block body %}
+
+    <h2>Le SousService {{ sous_service.Name }}</h2>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id Sous Service</th>
+                <td>{{ sous_service.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ sous_service.Image }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ sous_service.Name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ sous_service.Description }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a href="{{ path('app_sous_services_crud_index') }}" class="btn btn-danger" style="width:150px; margin-top:10px; margin-left:20px">Retour à la liste</a>
+    <a href="{{ path('app_sous_services_crud_edit', {'id': sous_service.id}) }}" class="btn btn-primary" style="width:150px; margin-top:-38px; margin-left:200px">Modifier</a>
+    <div style="margin-left:260px;margin-top:-48px">
+            {{ include('sous_services_crud/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Bricoleurs{% endblock %}
+
+{% block body %}
+    <h1>Create new Bricoleurs</h1>
+
+    {{ include('bricoleurs_crud/_form.html.twig') }}
+
+    <a href="{{ path('app_bricoleurs_crud_index') }}">back to list</a>
+{% endblock %}

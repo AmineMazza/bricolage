@@ -1,0 +1,299 @@
+<title>{% block title %}Landing Page{% endblock %}</title>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		<link rel="icon" href="just_logo.png">
+ {% block stylesheets %}
+                    <!-- Global stylesheets -->
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="landing/fonts_landing/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="landing/fonts_landing/icomoon/style.css" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="landing/css_landing/style.css">
+		
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+                           <!-- slider stylesheet -->
+                              <link rel="stylesheet" type="text/css"
+                                href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+                              <!-- bootstrap core css -->
+                              <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+                              <!-- fonts style -->
+                              <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+                              <!-- Custom styles for this template -->
+                              <link href="css/style.css" rel="stylesheet" />
+                              <!-- responsive style -->
+                              <link href="css/responsive.css" rel="stylesheet" />
+
+                  <!-- /global stylesheets -->
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                        {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+	</head>
+	<body>
+		<div class="site-content">
+			<div class="container">
+				<main class="main-content">
+					<div class="content">
+						<header class="site-header">
+							<a class="navbar-brand" href="/">
+            					<img src="images_front\logo_images\Logo_mon_bricoleur_noir.png" style="width: 215px; height:70px;" alt="" />
+							</a>
+				
+							<div class="header-type">
+								<h2 style="margin-top:30px">Vous avez besoin d'un {{service.NameService}} !</h2>
+								<h1>Formulaire de demande</h1>
+								<p>
+									Remplissez les informations suivantes en précisant au mieux votre besoin.
+									Vous serez immédiatement contactés par un conseiller.
+								</p>
+							</div>
+						</header> <!-- .site-header -->
+					
+
+							<div class="banner">
+								<img src="/uploads/{{service.image}}" alt="Banner">
+							</div>
+
+						{# <h2>What is so cool in our college?</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum maxime explicabo architecto illo itaque expedita eaque harum illum perferendis, accusantium dolores, culpa alias. At impedit labore, quidem suscipit cumque sapiente!</p>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="feature rounded-icon">
+									<div class="feature-icon"><i class="icon-owl"></i></div>
+									<h3 class="feature-title">Ducimus blanditiis praesentium </h3>
+									<p>Accusamus iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+								</div>
+
+								<div class="feature rounded-icon">
+									<div class="feature-icon"><i class="icon-bus"></i></div>
+									<h3 class="feature-title">Adipiscing eiusmod incididunt </h3>
+									<p>Labore et dolore magna aliqua ad minim veniam exercitation ullamco.</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="feature rounded-icon">
+									<div class="feature-icon"><i class="icon-school"></i></div>
+									<h3 class="feature-title">Nemo enim ipsam voluptatem</h3>
+									<p>Accusamus iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+								</div>
+
+								<div class="feature rounded-icon">
+									<div class="feature-icon"><i class="icon-foot-ball"></i></div>
+									<h3 class="feature-title">Nam libero tempore soluta nobis </h3>
+									<p>Labore et dolore magna aliqua ad minim veniam exercitation ullamco.</p>
+								</div>
+							</div>
+						</div> #}
+
+						<div class="features">
+							{# <div class="feature">
+								<div class="feature-icon large"><i class="icon-archive"></i></div>
+								<h2 class="feature-title">Accusamus iusto dignissimos ducimus</h2>
+								<p>Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.</p>
+							</div>
+							<div class="feature">
+								<div class="feature-icon large"><i class="icon-book"></i></div>
+								<h2 class="feature-title">Neque porro quisquam est dolorem</h2>
+								<p>Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.</p>
+							</div>
+							<div class="feature">
+								<div class="feature-icon large"><i class="icon-badge"></i></div>
+								<h2 class="feature-title">Lorem ipsum dolor sit amet consectetur</h2>
+								<p>Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.</p>
+							</div> #}
+						</div>
+					</div>
+					<div class="aside">
+
+					
+							<form action="/FrontThanks" methode="post" class="signup-form">
+								<div class="form-header">
+									<h2>{{service.NameService}}</h2>
+									<p>{{service.discription}}</p>
+								</div>
+								<div class="form-content">
+									<p type="select">
+										<label for="besion" style="color:white">Choisir Votre besion :</label>
+										<span class="select control" >
+											<select name="besoin" id="besion" autofocus>
+											{% for sous_service in sous_services %}
+												{% if sous_service.idService.id == service.id %}
+													<option value="{{sous_service.id}}">{{sous_service.name}} </option>
+												{%  endif %}
+											{% endfor %}	
+											</select>
+										</span>
+									</p>
+									<p>
+										<label for="Decrivez" style="color:white">Décrivez Votre besoin :</label>
+										<input name="Decrivez" id="Decrivez" type="text" placeholder="Décrivez Votre besoin ..." >
+									</p>
+									<p>
+										<label for="livraison" style="color:white">Date de livraison :</label>
+										<input name="livraison" id="livraison" type="date" placeholder="date de livraison" required>
+									</p>
+									<p>
+										<label for="Nom" style="color:white">Nom :</label>
+										<input name="Nom" id="Nom" type="text" placeholder="Nom" required>
+									</p>
+									<p>
+										<label for="Prénom" style="color:white">Prénom :</label>
+										<input name="Prénom" id="Prénom" type="text" placeholder="Prénom" required>
+									</p>
+									<p>
+										<label for="Email" style="color:white">Email :</label>
+										<input name="Email" id="Email" type="email" placeholder="Clinet@gmail.com" required>
+									</p>
+									<p>
+										<label for="Tel" style="color:white">Tel :</label>
+										<input name="Tel" id="Tel" type="tel"  placeholder="0693399476" required>
+									</p>
+									{# <p><input type="text" placeholder="Ville" required> #}
+									<p>
+										<label for="ville" style="color:white">Votre Ville :</label>
+										<span class="select control" >
+											<select id="ville" name="ville">
+												<option value="#">Marrakech</option>
+												<option value="#">Casablanca</option>
+												<option value="#">Mohammedia</option>
+												<option value="#">Rabat</option>
+												<option value="#">salé</option>
+												<option value="#">Fes</option>
+												<option value="#">Meknes</option>
+												<option value="#">Oujda</option>
+												<option value="#">Tanja</option>
+												<option value="#">Tetouan</option>
+												<option value="#">Agadir</option>
+												<option value="#">Safi</option>
+												<option value="#">Autre...</option>
+											</select>
+										</span>
+									</p>
+									
+									</p>
+									<p>
+										<label for="Adresse" style="color:white">Votre Adresse :</label>
+										<input name="Adresse" id="Adresse" type="text" placeholder="Adresse..." required>
+									</p>
+									
+									{# <p>
+										<span class="select control">
+											<select name="" id="">
+												<option value="#">Choose Course</option>
+												<option value="#"></option>
+												<option value="#"></option>
+											</select>
+										</span>
+									</p> #}
+									
+									{# <h4>When do you want to join?</h4>
+									<div class="row">
+										<div class="col-sm-6">
+											<span class="radio control">
+												<input type="radio" name="month" id="jan">
+												<label for="jan">January</label>
+											</span>
+											<span class="radio control">
+												<input type="radio" name="month" id="feb">
+												<label for="feb">February</label>
+											</span>
+											<span class="radio control">
+												<input type="radio" name="month" id="mar">
+												<label for="mar">March</label>
+											</span>
+											<span class="radio control">
+												<input type="radio" name="month" id="apr">
+												<label for="apr">April</label>
+											</span>
+											<span class="radio control">
+												<input type="radio" name="month" id="may">
+												<label for="may">May</label>
+											</span>
+											<span class="radio control">
+												<input type="radio" name="month" id="jun">
+												<label for="jun">Jun</label>
+											</span>
+										</div>
+										<div class="col-sm-6">
+											<span class="radio control">
+												<input type="radio" name="month" id="jul">
+												<label for="jul">July</label>
+											</span>
+											<span class="radio control">
+												<input type="radio" name="month" id="aug">
+												<label for="aug">August</label>
+											</span>
+											<span class="radio control">
+												<input type="radio" name="month" id="sep">
+												<label for="sep">September</label>
+											</span>
+											<span class="radio control">
+												<input type="radio" name="month" id="oct">
+												<label for="oct">October</label>
+											</span>
+											<span class="radio control">
+												<input type="radio" name="month" id="nov">
+												<label for="nov">November</label>
+											</span>
+											<span class="radio control">
+												<input type="radio" name="month" id="dec">
+												<label for="dec">December</label>
+											</span>
+										</div>
+									</div> #}
+									<p>
+										<span class="radio control">
+											<input type="radio" name="month" id="accepte">
+											<label for="accepte" style="color:white">J'accepte d'être contacté par L'équipe Mon Bricoleur</label>
+										</span>
+									</p>
+									
+									<p>
+                                        <input name="submit" type="submit" value="Réserver Maintenant">
+                                        {# <button class="btn btn-primary" >{{ button_label|default('Réserver Maintenant') }}</button> #}
+									</p>
+									{# <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est numquam vitae nemo</p> #}
+								</div>
+							</form>
+						
+					</div>
+				</main>
+
+
+				<footer class="site-footer">
+					<p>Copyright &copy; 2022 Mon Bricoleur. Designed By
+						<a href="#">Amine MAZZA</a>
+					</p>
+{# 
+					<div class="social-links">
+						<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+						<a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
+					</div> #}
+				</footer>
+				
+			</div>
+
+		</div>
+
+
+	{% block javascripts %}
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            {{ encore_entry_script_tags('app') }} 
+
+  		<script src="landing/js_landing/jquery-1.11.1.min.js"></script>
+		<script src="landing/js_landing/plugins.js"></script>
+		<script src="landing/js_landing/app.js"></script>
+	{% endblock %}	
+</body>

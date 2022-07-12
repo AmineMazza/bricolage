@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SousServices{% endblock %}
+
+{% block body %}
+    <h2 style="margin-left:30%;margin-top:20px">Crée Un Nouveau Sous Service</h2>
+    <div style="margin-left:30%; margin-top:20px; width:400px">
+        {{ include('sous_services_crud/_form.html.twig') }}
+        <a href="{{ path('app_sous_services_crud_index') }}" class="btn btn-danger" style="width:150px; margin-top:-65px; margin-left:200px">Retour à la liste</a>
+    </div>
+{% endblock %}
